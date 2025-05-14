@@ -71,7 +71,7 @@
 
 \newcommand{\resumeItemNoBold}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {\raggedright #1 \vspace{-2pt}}
   }
 }
 
@@ -85,9 +85,9 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.7\textwidth}@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small\raggedright#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -116,6 +116,16 @@
 
 \newcommand\clink[1]{{\usefont{T1}{lmtt}{m}{n} #1 }}
 
+% Custom commands for awards with longer descriptions
+\newcommand{\resumeAwardSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.67\textwidth}@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small\parbox[t]{0.67\textwidth}{\raggedright #3}} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -124,105 +134,97 @@
 
 %----------HEADING-----------------
 \begin{tabularx}{\linewidth}{@{}m{0.8\textwidth} m{0.2\textwidth}@{}}
-  {
-      \huge{\textbf{Алексей Лапин}} \newline
-      \small{
-          \clink{
-              \href{mailto:a.lapin03@gmail.com}{\faEnvelope~\underline{a.lapin03@gmail.com}} \textbf{ | }
-              {\fontdimen2\font=0.75ex \href{tel:+79217770608}{\faPhone~\underline{+7 (921) 777-06-08}}}\textbf{ | }
-              \href{https://github.com/AaLexUser}{\faGithub~\underline{github.com/AaLexUser}}
-          } 
-          \newline
-          Санкт-Петербург, Россия
-      }
-  } & 
-  {
-      \hfill
-      \includegraphics[width=2.8cm, frame]{../photo/me.png}
-  }
+    {
+    \huge{\textbf{Алексей Лапин}} \newline
+    \small{
+        \clink{
+            \href{mailto:a.lapin03@gmail.com}{\faEnvelope~\underline{a.lapin03@gmail.com}} \textbf{ | }
+            {\fontdimen2\font=0.75ex \href{tel:+79217770608}{\faPhone~\underline{+7 (921) 777-06-08}}}\textbf{ | }
+            \href{https://github.com/AaLexUser}{\faGithub~\underline{github.com/AaLexUser}}
+        }
+        \newline
+        Санкт-Петербург, Россия
+    }
+    } &
+    {
+            \hfill
+            \includegraphics[width=2.8cm, frame]{../../photo/me.png}
+        }
 \end{tabularx}
 \vspace{-25pt}
 
 %-----------EDUCATION-----------------
 \section{Образование}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {\href{https://itmo.ru/}{Университет ИТМО}}{Санкт-Петербург, Россия}
-      {\href{https://abit.itmo.ru/program/bachelor/system_software}{Бакалавриат: Системное и прикладное программное обеспечение 09.03.04}}{Сентябрь 2021 -- Июль 2025}
-      
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+{\href{https://itmo.ru/}{Университет ИТМО}}{Санкт-Петербург, Россия}
+{\href{https://abit.itmo.ru/program/bachelor/system_software}{Бакалавриат: Системное и прикладное программное обеспечение 09.03.04}}{Сентябрь 2021 -- Июль 2025}
 
+\resumeSubItem{Relevant Coursework}{Системы искусственного интеллекта, Машинное обучение и анализ данных, Информационные системы и базы данных, Прикладная статистика, Теория вероятностей, Разработка сетевых приложений, Распределенные вычисления}
+\resumeSubHeadingListEnd
+
+%-----------JOB-----------------
+\section{Опыт работы}
+\resumeSubHeadingListStart
+\resumeSubheading
+{\href{https://aim.club/}{ИЦ ИТМО «Сильный искусственный интеллект в промышленности»}}{Санкт-Петербург, Россия}
+{Лаборант}{Июля 2024 -- По настоящее время}
+\resumeItemListStart
+\resumeItemNoBold{Основной разработчик \textbf{мультиагентной} системы \textbf{автоматизированного машинного обучения} с применением \textbf{больших языковых моделей} – \href{https://github.com/aimclub/FEDOT.LLM}{\textbf{FEDOT.LLM}}.}
+\resumeItemNoBold{\href{https://github.com/aimclub/FEDOT.LLM}{\textbf{FEDOT.LLM:}} \textbf{AutoML} следующего поколения с применением \textbf{БЯМ}. Он сочетает в себе мощь \textbf{больших языковых моделей} с \textbf{автоматизированными методами машинного обучения} для улучшения процессов \textbf{анализа данных} и \textbf{построения конвейеров}.}
+
+\textbf{Технологии:} Python, NumPy, Pandas, Langchain, Streamlit, Chromadb, AutoML (FEDOT, FEDOT\_Ind, Autogluon), OpenAI.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 %-----------PROJECTS-----------------
-\section{Проекты}
+\section{Пет-Проекты}
 \resumeSubHeadingListStart
 
 \resumeSubheading{
-    \href{https://github.com/AaLexUser/ITMO-2-course/tree/main/Computational-mathematics/compl-math-lab-4}
-    {Function approximation program}}{\textit{Апрель -- Май 2023}}{С++, SFML}{ }
-    \resumeItemListStart
-      \resumeItemNoBold{Программа находит функцию,  являющуюся наилучшим приближением заданной табличной функции по методу наименьших квадратов.}
-      \resumeItemNoBold{Достигнуто интерактивное взаимодействие с графиком (перемещение, масштабирование, добавление графиков на одно окно), путем написания библиотеки на основе \textbf{SFML}.}
-    \resumeItemListEnd
-
-    \resumeSubheading{
-    \href{https://github.com/AaLexUser/ITMO-2-course/tree/main/Programming-languages/assignment-5-sepia-filter}
-    {Фильтр сепия на C и Ассемблере}}{\textit{Январь 2023}}{C, x86\_64asm} { }
-    \resumeItemListStart
-      \resumeItemNoBold{Достигнуто ускорение выполнения программы на ассемблере в 10 раз по сравнению с реализацией на C, путем использования \textbf{векторных инструкций процессора SSE}.}
-      \resumeItemNoBold{Реализована библиотека для работы с \textbf{BMP} файлами картинок.}
-    \resumeItemListEnd
-
-    \resumeSubheading{
-    \href{https://github.com/AaLexUser/ITMO-2-course/tree/main/Web-programming/web-4}
-    {Point Application}}{\textit{Декабрь -- Февраль 2023}}{Java, TypeScript, React, Redux, Spring Boot, Oracle}{ }
-    \resumeItemListStart
-      \resumeItemNoBold{Динамический программный проект, предназначенный для создания точек на графике и управления ими.}
-      \resumeItemNoBold{Разработал \textbf{RESTful API}, использующий архитектуру \textbf{Spring Boot} для обработки запросов и ответов.}
-      \resumeItemNoBold{Аутентификация на основе \textbf{JWT-токена} с использованием \textbf{Spring Security}.}
-      \resumeItemNoBold{Использовал \textbf{Spring Data} для взаимодействия с \textbf{СУБД Oracle}, сопоставляя объекты Java с таблицами.}
-    \resumeItemListEnd
+    \href{https://github.com/AaLexUser/MyitmoGPT}
+    {MyItmoGPT}}{\textit{Апрель 2024}}{Python, YandexGPT, Telegram Bot}{ }
+\resumeItemListStart
+\resumeItemNoBold{Телеграмм бот для получения расписания с my.itmo путем естественного разговора с YandexGPT.}
+\resumeItemNoBold{Создал \textbf{промты} для \textbf{YandexGPT}, которые помогают извлекать нужную информацию из диалога с пользователем. Их ответом являются \textbf{аргументы для функции} в нужном формате. Это дало возможность получать необходимую информацию из внешних источников, недоступных LLM напрямую.}
+\resumeItemNoBold{Написал \textbf{промты}, которые на основе данных из внешних источников и вопроса пользователя предоставляют точный и понятный ответ на интересующий вопрос.}
+\resumeItemNoBold{Реализовал команды и ежедневные напоминания в \textbf{Telegram Боте}.}
+\resumeItemListEnd
 
 \resumeSubheading{
-    \href{https://github.com/AaLexUser/Route-manager-application}
-    {Route Manager}}{\textit{Февраль -- Октябрь 2022}}{Java Core, Stream API, Reflection API, PostgreSQL, SLF4J}{ }
-    \resumeItemListStart
-      \resumeItemNoBold{Клиент-серверное приложение предназначенное для хранения маршрутов пользователей.}
-      \resumeItemNoBold{Использовались \textbf{Java Collections} для эффективного хранения данных.}
-      \resumeItemNoBold{Использовал \textbf{Java’s Stream API} и лямбда-выражения для эффективной обработки данных.}
-      \resumeItemNoBold{Реализован обмен данными между клиентом и сервером по протоколу \textbf{TCP}.}
-      \resumeItemNoBold{На серевере реализовано \textbf{многопоточное} чтение запросов, обработка и отправка ответов.}
-      \resumeItemNoBold{Для работы с запросами от нескольких пользователей применяется \textbf{Java NIO Selector}.}
-      \resumeItemNoBold{Для хранения данных используется \textbf{СУБД PostgreSQL}.}
-      \resumeItemNoBold{Реализована собственная библиотека для автоматичесческого внедрения зависимостей \textbf{DI (Dependency injection)} с использованием \textbf{Java Reflection API}.}
-      \resumeItemNoBold{Реализовано логирование событий с помощью библиотеки \textbf{slf4j}.}
-      \resumeItemNoBold{Реализовано хеширование паролей алгоритмом \textbf{SHA-256}.}
-
-
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd 
+    \href{https://github.com/AaLexUser/Artificial-intelligence-systems}
+    {Machine learning methods}}{\textit{Сентябрь - Ноябрь 2023}}{Python, ML, Scikit-learn} { }
+\resumeItemListStart
+\resumeItemNoBold{Реализованные модели: \textbf{линейная регрессия}, \textbf{метод k-ближайших соседей}, \textbf{деревья решений} и \textbf{логическая регрессия} - без использования внешних библиотек.}
+\resumeItemNoBold{Модели использовались для анализа наборов данных, полученные метрики моделей сравнивались с метриками, полученными после обучения моделей \textbf{scikit-learn}.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 \section{Награды}
 \resumeSubHeadingListStart
-  \resumeSubheading{
-    \href{https://ftc-events.firstinspires.org/2019/team/12529\#awards}
-    {First Russia Robotics Championship}}{Красноярск, Россия}
-    {Победа в номинации Think Award Winner в составе команды KTM.}{Февраль 2020}
-    
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1gs8khjhjMai1iDpcuySTskslkZBpb5XG/view?usp=drive_link}
+    {Хакатон AI Learning Lab}}{Санкт-Петербург, Россия}
+{\textbf{Победитель}. Разработка платформы разметки данных для повышения качества обучения нейронных сетей.}{Февраль 2025}
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1QIoI3PejwaDDYfFeW4Al2UtjX8WS3nBv/view?usp=drive_link}
+    {XIV Конгресс молодых ученых ИТМО}}{Санкт-Петербург, Россия}
+{\textbf{Победитель номинации "Лучший доклад молодого ученого"}. Проект "Разработка сервиса разметки данных для обучения нейронных сетей"}{Апрель 2025}
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1w0LCMTmXbGLRT5wyzHR6HV2Q5f1fHShN/view?usp=drive_links}
+    {XIV Конгресс молодых ученых ИТМО}}{Санкт-Петербург, Россия}
+{\textbf{Победитель номинации "Лучший доклад молодого ученого"}. Проект "Разработка open-source инструмента автоматизированного машинного обучения с использованием больших языковых моделей"}{Апрель 2025}
 \resumeSubHeadingListEnd
-
 
 %--------PROGRAMMING SKILLS------------
 \section{Технические навыки}
- \resumeSubHeadingListStart
-   \resumeSubItem{Языки Программирования}{C, C++, x86\_64asm, Java, Python, SQL (PostgreSQL), JavaScript, HTML/CSS}
-   \resumeSubItem{Фреймворки}{Spring Boot, Spring, Spring Data, Spring Security}
-   \resumeSubItem{Библиотеки}{React, Pandas, NumPy, Matplotlib, SFML}
-   \resumeSubItem{Инструменты разработчика}{Git, GitHub Actions, Gradle, Maven, CLion, PyCharm, IntelliJ, Webstorm, Jupyter Notebook, GoogleCollab}
-   \resumeSubItem{Операционные системы}{Linux, UNIX, Windows}
- \resumeSubHeadingListEnd
- \section{Дополнительная информация}
- \resumeSubHeadingListStart
-   \resumeSubItem{Языки}{Английский язык -- B1}
- \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubItem{Языки Программирования}{Clojure, Java, Python, SQL (PostgreSQL), TypeScript, C, C++}
+\resumeSubItem{Фреймворки}{Spring Boot, Spring, Spring Data, Spring Security}
+\resumeSubItem{Библиотеки}{React, Pandas, NumPy, Matplotlib, SFML}
+\resumeSubItem{Инструменты разработчика}{Git, GitHub Actions, Gradle, Maven, Jupyter Notebook, GoogleCollab}
+\resumeSubHeadingListEnd
+\section{Дополнительная информация}
+\resumeSubHeadingListStart
+\resumeSubItem{Языки}{Английский язык -- B1}
+\resumeSubHeadingListEnd
 \end{document}

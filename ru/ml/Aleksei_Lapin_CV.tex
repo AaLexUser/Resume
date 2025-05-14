@@ -71,7 +71,7 @@
 
 \newcommand{\resumeItemNoBold}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {\raggedright #1 \vspace{-2pt}}
   }
 }
 
@@ -85,9 +85,9 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.7\textwidth}@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small\raggedright#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -115,6 +115,16 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \newcommand\clink[1]{{\usefont{T1}{lmtt}{m}{n} #1 }}
+
+% Custom commands for awards with longer descriptions
+\newcommand{\resumeAwardSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.67\textwidth}@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small\parbox[t]{0.67\textwidth}{\raggedright #3}} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -177,7 +187,7 @@
 \resumeItemNoBold{Телеграмм бот для получения расписания с my.itmo путем естественного разговора с YandexGPT.}
 \resumeItemNoBold{Создал \textbf{промты} для \textbf{YandexGPT}, которые помогают извлекать нужную информацию из диалога с пользователем. Их ответом являются \textbf{аргументы для функции} в нужном формате. Это дало возможность получать необходимую информацию из внешних источников, недоступных LLM напрямую.}
 \resumeItemNoBold{Написал \textbf{промты}, которые на основе данных из внешних источников и вопроса пользователя предоставляют точный и понятный ответ на интересующий вопрос.}
-\resumeItemNoBold{Реализовал возможность общения с программой, добавил команды, ежедневные напоминания в \textbf{Telegram Боте}.}
+\resumeItemNoBold{Реализовал команды и ежедневные напоминания в \textbf{Telegram Боте}.}
 \resumeItemListEnd
 
 \resumeSubheading{
@@ -187,32 +197,34 @@
 \resumeItemNoBold{Реализованные модели: \textbf{линейная регрессия}, \textbf{метод k-ближайших соседей}, \textbf{деревья решений} и \textbf{логическая регрессия} - без использования внешних библиотек.}
 \resumeItemNoBold{Модели использовались для анализа наборов данных, полученные метрики моделей сравнивались с метриками, полученными после обучения моделей \textbf{scikit-learn}.}
 \resumeItemListEnd
+\resumeSubHeadingListEnd
 
-\resumeSubheading{
-    \href{https://github.com/AaLexUser/PokeShop}
-    {PokeShop E-commerce}}{\textit{Сентябрь - Январь 2024}}{PostgreSQL, PL/pgSQL, Java, React, TypeScript}{ }
-\resumeItemListStart
-\resumeItemNoBold{Интернет магазин для покупки покемонов.}
-\resumeItemNoBold{Разработана инфологическая и даталогическая модели, по которым впоследствии была создана \textbf{база данных}.}
-\resumeItemNoBold{Разработал \textbf{RESTful API}, использующий архитектуру \textbf{Spring Boot} для обработки запросов и ответов.}
-\resumeItemNoBold{Аутентификация на основе \textbf{JWT-токена} с использованием \textbf{Spring Security}.}
-\resumeItemNoBold{Использовал \textbf{Spring Data} для взаимодействия с \textbf{СУБД PostgreSQL}, сопоставляя объекты Java с таблицами.}
-\resumeItemNoBold{Разработал \textbf{веб-интерфейс} с использованием \textbf{React} и \textbf{Redux}.}
-\resumeItemListEnd
-
+\section{Награды}
+\resumeSubHeadingListStart
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1gs8khjhjMai1iDpcuySTskslkZBpb5XG/view?usp=drive_link}
+    {Хакатон AI Learning Lab}}{Санкт-Петербург, Россия}
+{\textbf{Победитель}. Разработка платформы разметки данных для повышения качества обучения нейронных сетей.}{Февраль 2025}
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1QIoI3PejwaDDYfFeW4Al2UtjX8WS3nBv/view?usp=drive_link}
+    {XIV Конгресс молодых ученых ИТМО}}{Санкт-Петербург, Россия}
+{\textbf{Победитель номинации "Лучший доклад молодого ученого"}. Проект "Разработка сервиса разметки данных для обучения нейронных сетей"}{Апрель 2025}
+\resumeAwardSubheading{
+    \href{https://drive.google.com/file/d/1w0LCMTmXbGLRT5wyzHR6HV2Q5f1fHShN/view?usp=drive_links}
+    {XIV Конгресс молодых ученых ИТМО}}{Санкт-Петербург, Россия}
+{\textbf{Победитель номинации "Лучший доклад молодого ученого"}. Проект "Разработка open-source инструмента автоматизированного машинного обучения с использованием больших языковых моделей"}{Апрель 2025}
 \resumeSubHeadingListEnd
 
 %--------PROGRAMMING SKILLS------------
 \section{Технические навыки}
 \resumeSubHeadingListStart
-\resumeSubItem{Языки Программирования}{Python, C/C++, Java, JavaScript, TypeScript, SQL (PostgreSQL)}
+\resumeSubItem{Языки Программирования}{Clojure, Java, Python, SQL (PostgreSQL), TypeScript, C, C++}
 \resumeSubItem{Фреймворки}{Spring Boot, Spring, Spring Data, Spring Security}
-\resumeSubItem{Библиотеки}{Pandas, NumPy, Matplotlib, Scikit-learn, Langchain, Streamlit, React, Redux}
-\resumeSubItem{Инструменты разработчика}{Docker, Jupyter Notebook, Git, GitHub Actions, Conda, Poetry, Gradle, Maven, Vite}
-\resumeSubItem{Верстка документов}{LaTeX, Dot(Graphviz)}
+\resumeSubItem{Библиотеки}{React, Pandas, NumPy, Matplotlib, SFML}
+\resumeSubItem{Инструменты разработчика}{Git, GitHub Actions, Gradle, Maven, Jupyter Notebook, GoogleCollab}
 \resumeSubHeadingListEnd
 \section{Дополнительная информация}
 \resumeSubHeadingListStart
-\resumeSubItem{Языки}{Английский язык -- Intermediate}
+\resumeSubItem{Языки}{Английский язык -- B1}
 \resumeSubHeadingListEnd
 \end{document}
